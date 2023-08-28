@@ -8,6 +8,27 @@ function api_docs_schema_retrieve(payload) {
     params: { lang: payload.lang }
   })
 }
+function api_v1_amenity_list(payload) {
+  return entdemorealestatAPI.get(`/api/v1/amenity/`)
+}
+function api_v1_amenity_create(payload) {
+  return entdemorealestatAPI.post(`/api/v1/amenity/`, payload.data)
+}
+function api_v1_amenity_retrieve(payload) {
+  return entdemorealestatAPI.get(`/api/v1/amenity/${payload.id}/`)
+}
+function api_v1_amenity_update(payload) {
+  return entdemorealestatAPI.put(`/api/v1/amenity/${payload.id}/`, payload.data)
+}
+function api_v1_amenity_partial_update(payload) {
+  return entdemorealestatAPI.patch(
+    `/api/v1/amenity/${payload.id}/`,
+    payload.data
+  )
+}
+function api_v1_amenity_destroy(payload) {
+  return entdemorealestatAPI.delete(`/api/v1/amenity/${payload.id}/`)
+}
 function api_v1_login_create(payload) {
   return entdemorealestatAPI.post(`/api/v1/login/`, payload.data)
 }
@@ -79,6 +100,12 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_amenity_list,
+  api_v1_amenity_create,
+  api_v1_amenity_retrieve,
+  api_v1_amenity_update,
+  api_v1_amenity_partial_update,
+  api_v1_amenity_destroy,
   api_v1_login_create,
   api_v1_property_list,
   api_v1_property_create,
