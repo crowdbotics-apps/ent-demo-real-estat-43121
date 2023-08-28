@@ -8,6 +8,27 @@ function api_docs_schema_retrieve(payload) {
     params: { lang: payload.lang }
   })
 }
+function api_v1_address_list(payload) {
+  return entdemorealestatAPI.get(`/api/v1/address/`)
+}
+function api_v1_address_create(payload) {
+  return entdemorealestatAPI.post(`/api/v1/address/`, payload.data)
+}
+function api_v1_address_retrieve(payload) {
+  return entdemorealestatAPI.get(`/api/v1/address/${payload.id}/`)
+}
+function api_v1_address_update(payload) {
+  return entdemorealestatAPI.put(`/api/v1/address/${payload.id}/`, payload.data)
+}
+function api_v1_address_partial_update(payload) {
+  return entdemorealestatAPI.patch(
+    `/api/v1/address/${payload.id}/`,
+    payload.data
+  )
+}
+function api_v1_address_destroy(payload) {
+  return entdemorealestatAPI.delete(`/api/v1/address/${payload.id}/`)
+}
 function api_v1_amenity_list(payload) {
   return entdemorealestatAPI.get(`/api/v1/amenity/`)
 }
@@ -100,6 +121,12 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_address_list,
+  api_v1_address_create,
+  api_v1_address_retrieve,
+  api_v1_address_update,
+  api_v1_address_partial_update,
+  api_v1_address_destroy,
   api_v1_amenity_list,
   api_v1_amenity_create,
   api_v1_amenity_retrieve,
