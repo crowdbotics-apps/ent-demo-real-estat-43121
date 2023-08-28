@@ -54,7 +54,7 @@ const App = ({
           {"Commercial Real Estate Management\n        "}
         </Text>
         <Pressable style={styles.headerButton} onPress={() => {
-        navigation.navigate("ScreenAI2", {
+        navigation.navigate("Untitled2", {
           DATA: DATA
         });
       }}>
