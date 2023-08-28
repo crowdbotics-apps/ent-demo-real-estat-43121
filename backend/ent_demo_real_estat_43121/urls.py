@@ -31,7 +31,10 @@ urlpatterns = [
     path("rest-auth/", include("rest_auth.urls")),
     # Override email confirm to use allauth's HTML view instead of rest_auth's API view
     path("rest-auth/registration/account-confirm-email/<str:key>/", confirm_email),
-    path("rest-auth/registration/", include("rest_auth.registration.urls")),
+    path("rest-auth/registration/", include("rest_auth.registration.urls")),path("api/v1/", include("address.api.v1.urls")), path("api/v1/", include("amenity.api.v1.urls")), path("api/v1/", include("property.api.v1.urls"))
+
+
+
 ]
 
 admin.site.site_header = "ent-demo-real-estate-v2"
