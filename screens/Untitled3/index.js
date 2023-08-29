@@ -1,4 +1,3 @@
-import { useRoute } from "@react-navigation/native";
 import React from "react";
 import { SafeAreaView, View, Text, StyleSheet, ImageBackground, Pressable } from "react-native";
 import { LineChart, ComposedChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, AreaChart, Area, Scatter } from "recharts";
@@ -6,8 +5,6 @@ import { LineChart, ComposedChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, L
 const App = ({
   navigation
 }) => {
-  const route = useRoute();
-  const DATA = route.params?.DATA;
   const mockData = [{
     name: "Page A",
     uv: 590,
@@ -54,9 +51,7 @@ const App = ({
           {"Commercial Real Estate Management\n        "}
         </Text>
         <Pressable style={styles.headerButton} onPress={() => {
-        navigation.navigate("Untitled2", {
-          DATA: DATA
-        });
+        navigation.navigate("Untitled2");
       }}>
           <View style={[styles.button]}>
             <Text style={styles.buttonText}>Home</Text>
@@ -188,10 +183,6 @@ const styles = StyleSheet.create({
     padding: 30,
     width: "100%",
     height: "100%"
-  },
-  image: {
-    width: 100,
-    height: 100
   },
   text: {
     marginTop: 10
