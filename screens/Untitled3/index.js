@@ -53,7 +53,7 @@ const App = ({
         <Pressable style={styles.headerButton} onPress={() => {
         navigation.navigate("Untitled2");
       }}>
-          <View style={[styles.button]}>
+          <View style={styles.button}>
             <Text style={styles.buttonText}>Home</Text>
           </View>
         </Pressable>
